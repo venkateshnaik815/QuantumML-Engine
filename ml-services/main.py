@@ -12,3 +12,6 @@ app.include_router(preprocessing.router)
 @app.get('/')
 def read_root():
     return {'status': 'ML Services API Running'}
+from app.routers import training, automl
+app.include_router(training.router)
+app.include_router(automl.router)
