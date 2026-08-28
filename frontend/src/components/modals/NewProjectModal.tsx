@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store';
+import type { RootState } from '../../store/store';
 import { closeNewProjectModal } from '../../store/uiSlice';
 import { X, Loader2 } from 'lucide-react';
-import { coreApi } from '../../api/client';
+// import { coreApi } from '../../api/client';
 
 export const NewProjectModal = () => {
   const isOpen = useSelector((state: RootState) => state.ui.isNewProjectModalOpen);
