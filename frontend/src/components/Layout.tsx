@@ -1,7 +1,11 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { openNewProjectModal } from '../store/uiSlice';
+import { NewProjectModal } from './modals/NewProjectModal';
 import { LayoutDashboard, Database, BrainCircuit, Activity, Settings, Plus, Bell } from 'lucide-react';
 
 const Layout = () => {
+  const dispatch = useDispatch();
   const location = useLocation();
   const navItems = [
     { path: '/', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
@@ -70,7 +74,7 @@ const Layout = () => {
               <span className="absolute top-1 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
             </button>
             <div className="h-6 w-px bg-slate-200"></div>
-            <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 shadow-sm shadow-blue-600/20 transition-all">
+            <button onClick={() => dispatch(openNewProjectModal())} className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 shadow-sm shadow-blue-600/20 transition-all">
               <Plus size={16} />
               New Project
             </button>
@@ -78,6 +82,7 @@ const Layout = () => {
         </header>
         <div className="flex-1 overflow-y-auto p-8">
           <Outlet />
+          <NewProjectModal />
         </div>
       </main>
     </div>
