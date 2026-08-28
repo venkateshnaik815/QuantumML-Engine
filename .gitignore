@@ -1,0 +1,48 @@
+# IDEs and OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+*.swo
+
+# Node / React Frontend
+node_modules/
+npm-debug.log
+yarn-error.log
+build/
+dist/
+.env.local
+.env
+
+# Java / Spring Boot Backend
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+*.class
+*.log
+*.jar
+*.war
+
+# Python / FastAPI ML Services
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+htmlcov/
+.coverage
+.tox/
+
+# Logs and databases
+logs/
+*.sqlite3
+db.sqlite3
+
+# Docker
+docker-compose.override.yml
