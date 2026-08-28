@@ -15,3 +15,6 @@ def read_root():
 from app.routers import training, automl
 app.include_router(training.router)
 app.include_router(automl.router)
+from app.routers import predictions, batch_predictions
+app.include_router(predictions.router)
+app.include_router(batch_predictions.router)
